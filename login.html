@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+  <script>
+function show(shown,hidden1,hidden2,hidden3,hidden4,hidden5,hidden6,hidden7){
+document.getElementById(shown).style.display='block';
+document.getElementById(hidden1).style.display='none';
+document.getElementById(hidden2).style.display='none';
+document.getElementById(hidden3).style.display='none';
+document.getElementById(hidden4).style.display='none';
+document.getElementById(hidden5).style.display='none';
+document.getElementById(hidden6).style.display='none';
+document.getElementById(hidden7).style.display='none';
+return false;
+}
+</script>
+<style type="text/css">
+  *, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 35;
+  background: #c42b2b ;
+  font-family: 'Comic', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+a:hover {
+  color: #000000;
+}
+
+.form {
+  background: rgba(21, 125, 237, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Comic Sans', sans-serif;
+  color: #000000;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+  transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease, -webkit-box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #a0bf3c;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #c5f234;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+</style>
+
+  
+</head>
+
+<body>
+<div id="Page1">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>Welcome!</h1>
+          <style type="text/css">
+            
+          </style>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="email" required autocomplete="off" />
+            <h3>Email</h3>
+            <style type="text/css">
+              h3{font-family: Helvetica;
+                color:white;
+                font-size: 10px;}
+            </style>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="password" required autocomplete="off" required title="5 to 10 characters" pattern=".{5,10}"/>
+            <style type="text/css">
+              h2{font-family: Helvetica;
+                color:white;
+                font-size: 10px;}
+            </style>
+            <h2>Password</h2>
+          </div>
+          
+          <p class="forgot"><a href="#" onclick="return show('Page2', 'Page1', 'Page3', 'Page4', 'Page5', 'Page6', 'Page7', 'Page8');">Forgot Password?</a></p>
+          
+          <button class="button button-block" />Log In</button>
+          <h4><a href="index3.html" onclick="return show('Page3', 'Page1', 'Page2', 'Page4', 'Page5', 'Page6', 'Page7', 'Page8');">Continue Without login</a></h4>
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page2">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>Password Reset</h1>
+          <style type="text/css">
+            
+          </style>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="email" required autocomplete="off"/>
+            <h3>Email</h3>
+            <style type="text/css">
+              h3{font-family: Helvetica;
+                color:white;
+                font-size: 10px;}
+            </style>
+          </div>
+          
+         
+          
+          <button class="button button-block"/>Send Link
+          <a href="#"></a>
+          </button>
+          
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page3">
+  <div class="form">
+      
+          <div id="login">   
+
+          <h1></h1>
+          <center><img src="img/Location2.gif"></center>
+          <style type="text/css">
+            h1{
+
+            }
+          </style>     
+          <script type="text/javascript">
+            function myFunction() {
+              show('Page4', 'Page1', 'Page2', 'Page3', 'Page5', 'Page6', 'Page7', 'Page8');
+}
+          </script> 
+            <form action="#"><a href=""  onclick="setTimeout(myFunction, 3000)" ">
+    <button class="button button-block"/> Continue</button>
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page4">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>INFORMATION!</h1>
+          <style type="text/css">
+            h1{
+              font-family: Helvetica;
+              font-size: 25px;
+            }
+          </style>
+          
+          <a href="#" onclick="return show('Page5', 'Page1', 'Page2', 'Page3', 'Page4', 'Page6', 'Page7', 'Page8');"><img src="student.png" width="100" height="100" alt="Group" ></a>
+          
+          <a href="#" onclick="return show('Page6', 'Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page7', 'Page8');"><img src="discplinary.png" width="100" height="100" align="right" hspace="25"></a>
+          
+          <a href="#" onclick="return show('Page7', 'Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6', 'Page8');"><img src="exam.png" width="100" height="100" align="right"></a>
+          <a href="#" onclick="return show('Page8', 'Page1', 'Page2', 'Page3', 'Page4', 'Page5', 'Page6', 'Page7');"><img src="grp.jpg" width="100" height="100" align="left" hspace="25"></a>
+          <style type="text/css">
+            img{ 
+              border-radius: 50%; 
+             }
+             img:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 140, 186, 0.5);
+          </style>
+          
+          <form action="/" method="post">
+         
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page5">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>GROUP</h1>
+          <style type="text/css">
+            
+          </style>
+          <frame>
+            <h6>Chatbox</h6>
+            <style type="text/css">
+              h6{
+                text-align: center;
+                font-size: 30px;
+                border-style: inset;
+                background-color: lightgrey;
+                min-height: 300px; 
+              }
+            </style>
+          </frame>
+          <form action="/action_page.php">
+   <input type="text" name="fname"><br>
+  <button class="button button-block">Send</button>
+</form>
+
+          <form action="/" method="post">
+          
+            
+          
+          
+          
+          
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page6">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>GROUP</h1>
+          <style type="text/css">
+            
+          </style>
+          <frame>
+            <h6>Chatbox</h6>
+            <style type="text/css">
+              h6{
+                text-align: center;
+                font-size: 30px;
+                border-style: inset;
+                background-color: lightgrey;
+                min-height: 300px; 
+              }
+            </style>
+          </frame>
+          <form action="/action_page.php">
+   <input type="text" name="fname"><br>
+  <button class="button button-block">Send</button>
+</form>
+
+          <form action="/" method="post">
+          
+            
+          
+          
+          
+          
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page7">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>GROUP</h1>
+          <style type="text/css">
+            
+          </style>
+          <frame>
+            <h6>Chatbox</h6>
+            <style type="text/css">
+              h6{
+                text-align: center;
+                font-size: 30px;
+                border-style: inset;
+                background-color: lightgrey;
+                min-height: 300px; 
+              }
+            </style>
+          </frame>
+          <form action="/action_page.php">
+   <input type="text" name="fname"><br>
+  <button class="button button-block">Send</button>
+</form>
+
+          <form action="/" method="post">
+          
+            
+          
+          
+          
+          
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+<div style="display: none" id="Page8">
+  <div class="form">
+      
+          <div id="login">   
+          <h1>GROUP</h1>
+          <style type="text/css">
+            
+          </style>
+          <frame>
+            <h6>Chatbox</h6>
+            <style type="text/css">
+              h6{
+                text-align: center;
+                font-size: 30px;
+                border-style: inset;
+                background-color: lightgrey;
+                min-height: 300px; 
+              }
+            </style>
+          </frame>
+          <form action="/action_page.php">
+   <input type="text" name="fname"><br>
+  <button class="button button-block">Send</button>
+</form>
+
+          <form action="/" method="post">
+          
+            
+          
+          
+          
+          
+          <style type="text/css">
+            h4 {
+              font-family: Helvetica;
+              text-align: center;
+              text-decoration: underline;
+              font-size: 15px;
+            }
+          </style>
+
+          </form>
+
+        </div>
+        
+      </div>
+      
+</div> 
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+</div>
+
+</body>
+</html>
