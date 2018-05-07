@@ -1,0 +1,1 @@
+# college static website
